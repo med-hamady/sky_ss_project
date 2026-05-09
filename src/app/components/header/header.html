@@ -1,0 +1,32 @@
+<nav [class.scrolled]="isScrolled">
+    <div class="nav-container">
+        <a href="#home" class="logo" aria-label="SKY SS - Accueil">
+            <img src="skyss_logo.png" alt="SKY SS" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span class="logo-text" style="display:none;">SKY SS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" aria-label="Aller à l'accueil">Accueil</a></li>
+            <li><a href="#services" aria-label="Aller aux services">Services</a></li>
+            <li><a href="#projects" aria-label="Aller aux domaines d'expertise">Expertises</a></li>
+            <li><a href="#about" aria-label="Aller à propos">À propos</a></li>
+            <li><a href="#contact" aria-label="Aller au contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Ouvrir/fermer le menu mobile" role="button"
+            tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" (click)="toggleMobileMenu()">Accueil</a></li>
+            <li><a href="#services" (click)="toggleMobileMenu()">Services</a></li>
+            <li><a href="#projects" (click)="toggleMobileMenu()">Expertises</a></li>
+            <li><a href="#about" (click)="toggleMobileMenu()">À propos</a></li>
+            <li><a href="#contact" (click)="toggleMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
+</nav>

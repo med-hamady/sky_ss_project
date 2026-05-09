@@ -1,0 +1,551 @@
+/* ================================================
+   PROJECTS SECTION - Carousel Design
+   ================================================ */
+
+.projects-section {
+    padding: 60px 0;
+    background: var(--bg-primary);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: clamp(1.875rem, 5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ================================================
+   EXPERTISE GRID (SKY SS)
+   ================================================ */
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-bottom: 50px;
+}
+
+.expertise-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 32px 28px;
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-accent);
+}
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
+}
+
+.expertise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expertise-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(13, 59, 102, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expertise-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.expertise-count {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.expertise-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 12px;
+}
+
+.expertise-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.expertise-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.expertise-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.expertise-highlights svg {
+    flex-shrink: 0;
+    color: var(--accent-cyan);
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .expertise-card {
+        padding: 26px 22px;
+    }
+}
+
+/* ================================================
+   PROJECT CAROUSEL (legacy, conservé pour réutilisation)
+   ================================================ */
+
+.project-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-display {
+    flex: 1;
+    overflow: hidden;
+}
+
+.project-row {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* ================================================
+   CAROUSEL ARROWS
+   ================================================ */
+
+.carousel-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    border-color: var(--accent-blue);
+    background: rgba(33, 150, 243, 0.1);
+    transform: scale(1.1);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-arrow svg {
+    transition: transform 0.3s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) svg {
+    transform: translateX(2px);
+}
+
+.arrow-left:hover:not(:disabled) svg {
+    transform: translateX(-2px);
+}
+
+/* ================================================
+   CAROUSEL INDICATORS
+   ================================================ */
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicator-dot:hover {
+    background: var(--accent-blue);
+    transform: scale(1.2);
+}
+
+.indicator-dot.active {
+    background: var(--accent-blue);
+    width: 30px;
+    border-radius: 5px;
+}
+
+/* ================================================
+   PROJECT PREVIEW
+   ================================================ */
+
+.project-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-preview img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.project-preview img.mobile-app {
+    max-width: 260px;
+}
+
+.project-preview img.web-app {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-row:hover .project-preview img.web-app {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(33, 150, 243, 0.25);
+}
+
+.project-row:hover .project-preview img.mobile-app {
+    transform: translateY(-5px);
+}
+
+/* ================================================
+   PROJECT INFO
+   ================================================ */
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.project-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.project-category {
+    font-size: 0.8125rem;
+    color: var(--accent-teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.project-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.tech-badge {
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(13, 59, 102, 0.08));
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    border-radius: 50px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.15), rgba(13, 59, 102, 0.15));
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.project-cta svg {
+    transition: transform 0.3s ease;
+}
+
+.project-cta:hover {
+    gap: 12px;
+    color: var(--accent-teal);
+}
+
+.project-cta:hover svg {
+    transform: translateX(4px);
+}
+
+/* ================================================
+   CTA SECTION
+   ================================================ */
+
+.projects-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(13, 59, 102, 0.05));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.cta-content h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+@media (max-width: 1024px) {
+    .projects-section {
+        padding: 70px 20px;
+    }
+
+    .project-row {
+        gap: 40px;
+    }
+
+    .carousel-arrow {
+        width: 45px;
+        height: 45px;
+    }
+
+    .project-title {
+        font-size: 1.625rem;
+    }
+
+    .project-preview img.mobile-app {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 16px;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 1.875rem;
+    }
+
+    .project-carousel {
+        gap: 20px;
+    }
+
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-indicators {
+        margin-bottom: 50px;
+    }
+
+    .project-preview img.mobile-app {
+        max-width: 220px;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 0.875rem;
+    }
+
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+
+    .projects-cta {
+        padding: 48px 24px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 50px 16px;
+    }
+
+    .section-title {
+        margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+        font-size: 1.625rem;
+    }
+
+    .project-carousel {
+        gap: 15px;
+    }
+
+    .project-row {
+        gap: 28px;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-preview img.mobile-app {
+        max-width: 200px;
+    }
+
+    .project-title {
+        font-size: 1.375rem;
+    }
+
+    .project-category {
+        font-size: 0.75rem;
+    }
+
+    .project-description {
+        font-size: 0.8125rem;
+        line-height: 1.6;
+    }
+
+    .projects-cta {
+        padding: 40px 20px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.375rem;
+    }
+
+    .cta-content p {
+        font-size: 0.9375rem;
+    }
+}

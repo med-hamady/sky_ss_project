@@ -1,0 +1,959 @@
+/* ================================================
+   HERO SECTION
+   ================================================ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-hero);
+    padding: 140px 20px 80px;
+}
+
+/* ================================================
+   BACKGROUND EFFECTS
+   ================================================ */
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(33, 150, 243, 0.4) 0%, transparent 70%);
+    top: -10%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(13, 59, 102, 0.4) 0%, transparent 70%);
+    bottom: -10%;
+    left: -5%;
+    animation-delay: 5s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 10s;
+}
+
+/* ================================================
+   HERO CONTAINER
+   ================================================ */
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================================================
+   HERO CONTENT
+   ================================================ */
+
+.hero-content {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(33, 150, 243, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+}
+
+.hero-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.hero-badge span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* ================================================
+   HERO TITLE & TYPING EFFECT
+   ================================================ */
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-heading);
+    margin-bottom: 24px;
+    animation: fadeIn 0.8s ease-out 0.4s backwards;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+    display: block;
+}
+
+.line-1 {
+    font-size: 3.5rem;
+}
+
+.line-2 {
+    font-size: 3.5rem;
+}
+
+.line-3 {
+    font-size: 3.5rem;
+    min-height: 80px;
+    display: inline-block;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+/* Cursor Animation */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background: var(--gradient-primary);
+    margin-left: 4px;
+    animation: blink 0.7s step-end infinite;
+    vertical-align: text-top;
+    height: 1em;
+}
+
+.cursor.blinking {
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 580px;
+    animation: fadeIn 0.8s ease-out 0.5s backwards;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    animation: fadeIn 0.8s ease-out 0.6s backwards;
+}
+
+.hero-buttons .btn-primary:hover svg {
+    transform: translateX(4px);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 48px;
+    animation: fadeIn 0.8s ease-out 0.8s backwards;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.stat-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-color);
+}
+
+/* ================================================
+   HERO VISUAL
+   ================================================ */
+
+.hero-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 1s ease-out 0.5s backwards;
+}
+
+.visual-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.center-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(60px);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+/* ================================================
+   NETWORK GRID VISUALIZATION
+   ================================================ */
+
+.network-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    opacity: 0.6;
+}
+
+.grid-line {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawGrid 3s ease-out forwards;
+}
+
+.grid-line.v1 { animation-delay: 0s; }
+.grid-line.v2 { animation-delay: 0.2s; }
+.grid-line.v3 { animation-delay: 0.4s; }
+.grid-line.h1 { animation-delay: 0.6s; }
+.grid-line.h2 { animation-delay: 0.8s; }
+.grid-line.h3 { animation-delay: 1s; }
+
+.connection-path {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: drawPath 2s ease-in-out 1.5s forwards, pulsePath 3s ease-in-out 3.5s infinite;
+    opacity: 0.4;
+}
+
+.path1 { animation-delay: 1.5s, 3.5s; }
+.path2 { animation-delay: 2s, 4s; }
+
+/* ================================================
+   SERVICE NODES
+   ================================================ */
+
+.service-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInNode 0.6s ease-out forwards;
+    transition: transform 0.3s ease;
+}
+
+.service-node:hover {
+    transform: translateY(-8px);
+}
+
+.node-1 {
+    top: 15%;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.node-2 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 2.2s;
+}
+
+.node-3 {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 2.4s;
+}
+
+.node-4 {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 2.6s;
+}
+
+.node-pulse {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(33, 150, 243, 0.4) 0%, transparent 70%);
+    animation: nodePulse 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+.node-icon {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--accent-blue);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.service-node:hover .node-icon {
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.4);
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(13, 59, 102, 0.1));
+    transform: rotate(360deg);
+}
+
+.node-icon svg {
+    transition: all 0.3s ease;
+}
+
+.service-node:hover .node-icon svg {
+    transform: scale(1.2);
+}
+
+.node-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 6px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.service-node:hover .node-label {
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.2);
+}
+
+/* ================================================
+   DATA PARTICLES
+   ================================================ */
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
+    animation: particleMove 8s linear infinite;
+    opacity: 0;
+}
+
+.p1 {
+    top: 15%;
+    left: 25%;
+    animation-delay: 3s;
+    animation-duration: 6s;
+}
+
+.p2 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 3.5s;
+    animation-duration: 7s;
+}
+
+.p3 {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 4s;
+    animation-duration: 6.5s;
+}
+
+.p4 {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 4.5s;
+    animation-duration: 7.5s;
+}
+
+.p5 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 5s;
+    animation-duration: 8s;
+}
+
+.p6 {
+    top: 30%;
+    left: 50%;
+    animation-delay: 5.5s;
+    animation-duration: 7s;
+}
+
+/* ================================================
+   SCROLL INDICATOR
+   ================================================ */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-indicator svg {
+    width: 24px;
+    height: 24px;
+}
+
+.scroll-indicator:hover {
+    color: var(--accent-blue);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+@media (max-width: 1200px) {
+    .hero-container {
+        gap: 60px;
+    }
+
+    .hero-visual {
+        height: 500px;
+    }
+
+    .grid-svg {
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .node-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .node-pulse {
+        width: 70px;
+        height: 70px;
+    }
+
+    .node-label {
+        font-size: 0.8125rem;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 120px 20px 70px;
+    }
+
+    .hero-container {
+        gap: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .line-1,
+    .line-2,
+    .line-3 {
+        font-size: 3rem;
+    }
+
+    .line-3 {
+        min-height: 70px;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .stat-item h3 {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: 1.0625rem;
+    }
+
+    .hero-visual {
+        height: 480px;
+    }
+
+    .grid-svg {
+        max-width: 450px;
+        max-height: 450px;
+    }
+
+    .node-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .node-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .node-pulse {
+        width: 65px;
+        height: 65px;
+    }
+
+    .node-label {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .particle {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 110px 16px 50px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .line-1,
+    .line-2,
+    .line-3 {
+        font-size: 2.5rem;
+    }
+
+    .line-3 {
+        min-height: 65px;
+    }
+
+    .hero-badge {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 7px 14px;
+    }
+
+    .hero-badge span {
+        font-size: 0.8125rem;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero-buttons .btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 0.9375rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .stat-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .stat-item p {
+        font-size: 0.8125rem;
+    }
+
+    .stat-divider {
+        height: 32px;
+    }
+
+    /* Visual Section - Simplify network grid on tablet */
+    .hero-visual {
+        height: 320px;
+        order: -1;
+    }
+
+    .grid-svg {
+        max-width: 380px;
+        max-height: 380px;
+        opacity: 0.5;
+    }
+
+    .node-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .node-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .node-pulse {
+        width: 60px;
+        height: 60px;
+    }
+
+    .node-label {
+        font-size: 0.6875rem;
+        padding: 4px 8px;
+    }
+
+    .particle {
+        display: none;
+    }
+
+    .scroll-indicator {
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 16px 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .line-1,
+    .line-2,
+    .line-3 {
+        font-size: 2.25rem;
+    }
+
+    .line-3 {
+        min-height: 60px;
+    }
+
+    .hero-badge svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .hero-badge span {
+        font-size: 0.75rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 0.9375rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .stat-item h3 {
+        font-size: 1.625rem;
+    }
+
+    .stat-item p {
+        font-size: 0.8125rem;
+    }
+
+    /* Hide visual section on mobile */
+    .hero-visual {
+        display: none;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Reduce background orbs on mobile */
+    .orb-1,
+    .orb-2,
+    .orb-3 {
+        filter: blur(60px);
+        opacity: 0.2;
+    }
+
+    .orb-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orb-2 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orb-3 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.25;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* New Animations for Network Grid Design */
+@keyframes drawGrid {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes pulsePath {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeInNode {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nodePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+@keyframes particleMove {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(100px, -80px);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(200px, -160px);
+    }
+}

@@ -1,0 +1,44 @@
+<section class="projects-section section" id="projects">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-title">
+            <h2>Nos <span class="text-gradient">Domaines d'expertise</span></h2>
+            <p>Une expérience concrète au service des entreprises et administrations</p>
+        </div>
+
+        <!-- Expertise Grid -->
+        <div class="expertise-grid">
+            <div class="expertise-card" *ngFor="let domain of domains; let i = index"
+                [class.animate-fadeInUp]="true" [style.animation-delay.s]="i * 0.1">
+                <div class="expertise-header">
+                    <div class="expertise-icon-wrapper">
+                        <img [src]="domain.iconImg" [alt]="domain.title" class="expertise-icon" loading="lazy">
+                    </div>
+                    <div class="expertise-count">{{ domain.count }}</div>
+                </div>
+
+                <h3 class="expertise-title">{{ domain.title }}</h3>
+                <p class="expertise-description">{{ domain.description }}</p>
+
+                <ul class="expertise-highlights">
+                    <li *ngFor="let highlight of domain.highlights">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ highlight }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="projects-cta">
+            <div class="cta-content">
+                <h3>Vous avez un projet&nbsp;?</h3>
+                <p>Discutons de vos besoins et construisons ensemble la solution adaptée.</p>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-large">Démarrer un projet</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,676 @@
+/* ================================================
+   PROGER TECHNOLOGY - GLOBAL STYLES
+   Modern, Professional Tech Company Design System
+   ================================================ */
+
+/* Import Google Fonts */
+/* Import Google Fonts - Moved to index.html for better performance */
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'); */
+
+/* ================================================
+   RESET & BASE
+   ================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+app-root {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ================================================
+   DESIGN TOKENS - PROGER TECHNOLOGY
+   ================================================ */
+
+:root {
+    /* Primary Colors - SKY SS Professional Palette (bleu clair / blanc) */
+    --primary-bg: #FFFFFF;
+    --accent-blue: #0D3B66;
+    /* Navy blue from logo - primary brand color */
+    --accent-cyan: #2196F3;
+    /* Bright cyan from logo - secondary brand */
+    --accent-light-blue: #64B5F6;
+    /* Light blue for softer accents */
+
+    /* Text Colors - Professional & Readable */
+    --text-primary: #1E293B;
+    /* Rich dark slate for main text */
+    --text-secondary: #64748B;
+    /* Soft slate for secondary text */
+    --text-muted: #64748B;
+    /* Muted slate for subtle text - improved contrast */
+    --text-heading: #0F172A;
+    /* Deep slate for headings */
+    --text-on-primary: #FFFFFF;
+    /* White text on colored backgrounds */
+
+    /* Background Colors - Layered & Harmonious */
+    --light-bg: #F8FAFC;
+    /* Softest blue-gray tint */
+    --lighter-bg: #F1F5F9;
+    /* Light blue-gray */
+    --card-bg: #FFFFFF;
+    --card-hover: #F8FAFC;
+    --section-alt-bg: #EFF6FF;
+    /* Very light blue for alternating sections */
+
+    /* Border & Divider Colors */
+    --border-color: #E2E8F0;
+    --border-hover: #CBD5E1;
+    --border-accent: rgba(33, 150, 243, 0.2);
+
+    /* Gradients - Smooth & Professional */
+    --gradient-primary: linear-gradient(135deg, #0D3B66 0%, #2196F3 100%);
+    --gradient-blue: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+    --gradient-navy: linear-gradient(135deg, #0F172A 0%, #0D3B66 100%);
+    --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(13, 59, 102, 0.05) 0%, rgba(33, 150, 243, 0.05) 100%);
+
+    /* Typography */
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Spacing */
+    --section-padding: 100px 20px;
+    --container-max-width: 1280px;
+
+    /* Effects - Soft & Professional Shadows */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+    --shadow-navy: 0 8px 32px rgba(13, 59, 102, 0.12);
+    --shadow-cyan: 0 8px 32px rgba(33, 150, 243, 0.12);
+    --shadow-teal: 0 8px 32px rgba(100, 181, 246, 0.12);
+    --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+
+    /* Aliases for backward compatibility */
+    --accent-teal: #64B5F6;
+    --primary-blue: #0D3B66;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+}
+
+/* ================================================
+   TYPOGRAPHY
+   ================================================ */
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-primary);
+    line-height: 1.7;
+    background-color: var(--primary-bg);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+::selection {
+    background: var(--accent-cyan);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* ================================================
+   SCROLLBAR STYLES
+   ================================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lighter-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    margin-bottom: 16px;
+}
+
+.section-title p {
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-on-primary);
+    box-shadow: var(--shadow-cyan);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-cyan);
+    background: var(--section-alt-bg);
+    color: var(--accent-blue);
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 18px;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+    border-color: var(--border-hover);
+    background: var(--card-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    gap: 32px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Text Utilities */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-blue);
+    z-index: 999;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: var(--transition-normal);
+    animation: whatsappPulse 2.4s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    background: #1FB855;
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+    animation: none;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--text-heading, #0F172A);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: var(--text-heading, #0F172A);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-4px);
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 14px rgba(37, 211, 102, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    .scroll-top {
+        bottom: 86px;
+        right: 22px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(33, 150, 243, 0.4);
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(33, 150, 243, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animation Utility Classes */
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-4 {
+    animation-delay: 0.4s;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+@media (max-width: 1200px) {
+    :root {
+        --section-padding: 80px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 16px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 40px 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .scroll-top {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

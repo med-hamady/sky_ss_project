@@ -1,0 +1,94 @@
+<section class="about-section section" id="about">
+    <div class="container">
+        <div class="about-content">
+            <!-- Who We Are -->
+            <div class="about-intro">
+                <div class="section-title">
+                    <h2>À propos de <span class="text-gradient">SKY SS</span></h2>
+                    <p>Votre partenaire IT en Mauritanie, au service des entreprises et administrations</p>
+                </div>
+
+                <div class="about-story">
+                    <p class="lead-text">
+                        SKY SS est une entreprise mauritanienne spécialisée en services informatiques, basée à Nouakchott. Nous accompagnons les entreprises et administrations dans leur transformation digitale grâce à des solutions modernes en cybersécurité, intelligence artificielle, développement logiciel, cloud et infrastructure réseau.
+                    </p>
+                    <p>
+                        Notre équipe de développeurs et d'ingénieurs systèmes met son expertise au service de projets sur mesure, avec un objectif simple&nbsp;: fournir des solutions fiables, sécurisées et innovantes, adaptées au contexte local et aux exigences internationales.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="mission-vision-grid">
+                <div class="mission-card card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Notre Mission</h3>
+                    <p>
+                        Démocratiser l'accès aux technologies modernes en Mauritanie en proposant aux entreprises et administrations des solutions IT performantes, sécurisées et alignées sur les standards internationaux.
+                    </p>
+                </div>
+
+                <div class="vision-card card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Notre Vision</h3>
+                    <p>
+                        Devenir l'acteur de référence de la transformation digitale en Mauritanie et en Afrique de l'Ouest, en alliant expertise technique, innovation IA et accompagnement humain de qualité.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Why SKY SS -->
+            <div class="why-us-section">
+                <h3 class="values-title">Pourquoi choisir <span class="text-gradient">SKY SS</span></h3>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <strong>Expérience</strong>
+                        <span>Une équipe d'ingénieurs et développeurs ayant mené des projets variés, du réseau d'entreprise au déploiement IA.</span>
+                    </div>
+                    <div class="why-item">
+                        <strong>Qualité du support</strong>
+                        <span>Un suivi réactif, du conseil au déploiement, jusqu'à la maintenance évolutive.</span>
+                    </div>
+                    <div class="why-item">
+                        <strong>Capacité d'innovation</strong>
+                        <span>Veille technologique permanente sur l'IA, le cloud et la cybersécurité pour proposer les meilleures solutions.</span>
+                    </div>
+                    <div class="why-item">
+                        <strong>Maîtrise des nouvelles technologies</strong>
+                        <span>Expertise sur les piles modernes&nbsp;: web/mobile, cloud, conteneurisation, ML et automatisation.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="values-section">
+                <h3 class="values-title">Nos <span class="text-gradient">Valeurs</span></h3>
+
+                <div class="values-grid">
+                    <div class="value-item" *ngFor="let value of values; let i = index" [class.animate-fadeInUp]="true"
+                        [style.animation-delay.s]="i * 0.1">
+                        <div class="value-icon-wrapper">
+                            <img [src]="value.iconImg" [alt]="value.title + ' icon'" class="value-icon" loading="lazy">
+                        </div>
+                        <h4>{{ value.title }}</h4>
+                        <p>{{ value.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

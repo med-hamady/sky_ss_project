@@ -1,0 +1,11 @@
+# SKY SS - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin areas (if any in the future)
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://skyss.mr/sitemap.xml

@@ -1,0 +1,46 @@
+<section class="services-section section" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nos <span class="text-gradient">Services</span></h2>
+            <p>Des solutions IT complètes pour les entreprises et administrations en Mauritanie</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" *ngFor="let service of services; let i = index" [class.animate-fadeInUp]="true"
+                [style.animation-delay.s]="i * 0.1">
+                <div class="service-icon-wrapper">
+                    <img [src]="service.iconImg" [alt]="service.title + ' icon'" class="service-icon" loading="lazy">
+                </div>
+                <div class="service-content">
+                    <h3>{{ service.title }}</h3>
+                    <p class="service-description">{{ service.description }}</p>
+                    <ul class="service-features">
+                        <li *ngFor="let feature of service.features">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>{{ feature }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <a [href]="service.link" class="service-link">
+                    En savoir plus
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="services-cta">
+            <div class="cta-content">
+                <h3>Un projet en tête&nbsp;?</h3>
+                <p>Parlez-nous de votre besoin — nous étudions la meilleure solution pour le concrétiser.</p>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-large">Demander un devis</a>
+        </div>
+    </div>
+</section>
