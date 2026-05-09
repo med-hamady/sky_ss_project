@@ -1,4 +1,4 @@
-# Proger Technology - Apache Configuration
+# SKY SS - Apache Configuration
 
 # Enable Rewrite Engine
 <IfModule mod_rewrite.c>

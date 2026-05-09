@@ -1,4 +1,4 @@
-# Proger Technology - Guide de Déploiement
+# SKY SS - Guide de Déploiement
 
 ## 📋 Prérequis
 
@@ -42,7 +42,7 @@ npm install
 # Build optimisé pour production
 npm run build
 
-# Les fichiers seront dans dist/progre-tech/
+# Les fichiers seront dans dist/skyss-website/
 ```
 
 ### 2. Configuration de l'Environnement
@@ -52,22 +52,22 @@ Le fichier `src/environments/environment.prod.ts` est automatiquement utilisé e
 ```typescript
 export const environment = {
   production: true,
-  apiUrl: 'https://proger-tech.com/api',
+  apiUrl: 'https://skyss.mr/api',
   enableDebug: false,
   enableAnalytics: true
 };
 ```
 
-**Important:** Remplacer `https://proger-tech.com` par votre domaine réel.
+**Important:** Remplacer `https://skyss.mr` par votre domaine réel.
 
 ### 3. Déploiement sur Serveur Node.js
 
 ```bash
 # Démarrer le serveur SSR
-npm run serve:ssr:progre-tech
+npm run serve:ssr:skyss-website
 
 # Ou avec PM2 (recommandé pour production)
-pm2 start dist/progre-tech/server/server.mjs --name proger-tech
+pm2 start dist/skyss-website/server/server.mjs --name skyss-website
 
 # Configurer PM2 au démarrage
 pm2 startup
@@ -81,7 +81,7 @@ Si vous utilisez Nginx comme reverse proxy:
 ```nginx
 server {
     listen 80;
-    server_name proger-tech.com www.proger-tech.com;
+    server_name skyss.mr www.skyss.mr;
 
     # Redirection HTTPS
     return 301 https://$server_name$request_uri;
@@ -89,7 +89,7 @@ server {
 
 server {
     listen 443 ssl http2;
-    server_name proger-tech.com www.proger-tech.com;
+    server_name skyss.mr www.skyss.mr;
 
     # Certificats SSL
     ssl_certificate /path/to/ssl/cert.pem;
@@ -170,13 +170,13 @@ NODE_ENV=production
 pm2 status
 
 # Logs en temps réel
-pm2 logs proger-tech
+pm2 logs skyss-website
 
 # Redémarrer l'application
-pm2 restart proger-tech
+pm2 restart skyss-website
 
 # Arrêter l'application
-pm2 stop proger-tech
+pm2 stop skyss-website
 ```
 
 ### Performance
@@ -193,7 +193,7 @@ pm2 stop proger-tech
 npm run build
 
 # Tester le build SSR
-npm run serve:ssr:progre-tech
+npm run serve:ssr:skyss-website
 
 # Ouvrir http://localhost:4000 et vérifier:
 # - Toutes les images chargent
@@ -244,11 +244,11 @@ npm run serve:ssr:progre-tech
 ## 📞 Support
 
 Pour toute question sur le déploiement:
-- Email: support@proger-tech.com
+- Email: contact@skyss.mr
 - Documentation Angular SSR: https://angular.dev/guide/ssr
 
 ---
 
 **Version:** 1.0.0
-**Dernière mise à jour:** 28 Novembre 2025
-**Équipe:** Proger Technology
+**Dernière mise à jour:** 9 mai 2026
+**Équipe:** SKY SS

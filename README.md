@@ -1,59 +1,103 @@
-# ProgreTech
+# SKY SS — Site web officiel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+Site web officiel de **SKY SS**, entreprise de services informatiques basée à Nouakchott (Mauritanie).
 
-## Development server
+> Votre partenaire de connectivité et transformation digitale en Mauritanie.
 
-To start a local development server, run:
+## 🛠️ Stack technique
 
-```bash
-ng serve
+- **Framework** : [Angular 20](https://angular.dev) (Server-Side Rendering activé)
+- **Langage** : TypeScript 5.9
+- **Email** : EmailJS (formulaires de contact / devis)
+- **Server** : Express (mode SSR Angular)
+- **Déploiement** : voir [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## 📂 Structure du projet
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── hero/          # Section d'accueil + slogan
+│   │   ├── services/      # 5 catégories de services
+│   │   ├── case-studies/  # Domaines d'expertise
+│   │   ├── about/         # À propos / mission / valeurs
+│   │   ├── contact/       # Formulaire contact + devis
+│   │   ├── header/        # Navigation principale
+│   │   ├── footer/        # Pied de page
+│   │   ├── home/          # Page d'accueil (assemblage)
+│   │   ├── legal/         # Mentions légales (privacy + terms)
+│   │   └── not-found/     # Page 404
+│   ├── app.html           # Layout global + WhatsApp flottant
+│   ├── app.routes.ts      # Routes Angular
+│   └── app.ts             # Composant racine
+├── environments/          # Variables prod / dev
+├── styles.css             # Design system + variables CSS
+└── index.html             # Meta SEO + JSON-LD
+
+public/
+├── icons/                 # Icônes des services
+├── favicon.ico
+├── robots.txt
+└── sitemap.xml
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Démarrage local
 
 ```bash
-ng generate component component-name
+# Installation des dépendances
+npm install
+
+# Lancer le serveur de développement
+npm start
+# → http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Le rechargement automatique est activé sur tous les fichiers source.
+
+## 🏗️ Build de production
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Les fichiers générés sont placés dans `dist/skyss-website/`.
 
-To build the project run:
+Pour servir le build SSR :
 
 ```bash
-ng build
+npm run serve:ssr:skyss-website
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧪 Tests
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## 📋 Fonctionnalités principales
 
-For end-to-end (e2e) testing, run:
+- Hero animé avec slogan typé dynamiquement
+- Présentation des 5 catégories de services
+  - Infrastructure & Réseau
+  - Développement Logiciel
+  - Intelligence Artificielle & Innovation
+  - Cybersécurité & Cloud
+  - Solutions Professionnelles
+- Domaines d'expertise (projets, applications, réseaux, IA)
+- Section À propos (mission, vision, valeurs)
+- Formulaire de contact avec **toggle Message / Demande de devis**
+- Bouton WhatsApp flottant (`+222 36015158`)
+- Pages légales (Confidentialité + CGU)
+- SSR activé (SEO optimisé, prerendering)
+- Responsive mobile / tablette / desktop
 
-```bash
-ng e2e
-```
+## 📞 Contact SKY SS
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Adresse** : Nouakchott, Mauritanie
+- **Téléphone / WhatsApp** : +222 36 01 51 58
+- **Email** : contact@skyss.mr
 
-## Additional Resources
+## 📄 Cahier des charges
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Voir [cahier_de_charge.md](cahier_de_charge.md) pour la liste complète des besoins fonctionnels.

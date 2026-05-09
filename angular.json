@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "progre-tech": {
+    "skyss-website": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -75,10 +75,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "progre-tech:build:production"
+              "buildTarget": "skyss-website:build:production"
             },
             "development": {
-              "buildTarget": "progre-tech:build:development"
+              "buildTarget": "skyss-website:build:development"
             }
           },
           "defaultConfiguration": "development"
