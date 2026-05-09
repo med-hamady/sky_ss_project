@@ -20,12 +20,8 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Visual Studio Code (configs locales, ne pas pousser sur GitHub)
+.vscode/
 .history/*
 
 # Miscellaneous
@@ -46,6 +42,6 @@ Thumbs.db
 .codex-ng-serve.log
 .codex-ng-serve.err.log
 
-# Claude Code local settings
-.claude/settings.local.json
+# Claude Code (config locale, ne pas pousser sur GitHub)
+.claude/
 
